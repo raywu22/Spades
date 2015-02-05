@@ -1,0 +1,51 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1 {
+	text-align:center;
+	font-size:80px;
+	font-weight:bold;
+}
+
+#start-spades-container {
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.start-spades-label {
+	font-size:20px;
+	font-weight:bold;
+}
+
+.start-spades-players {
+	width:300px;
+	margin-bottom:10px;
+}
+
+.start-spades-button {
+	width:70px;
+	margin-left:auto;
+	margin-right:auto;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
