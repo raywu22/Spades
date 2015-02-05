@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -7,14 +7,16 @@ a {
   color: #00B7FF;
 }
 
-h1 {
+#spades-header {
+	font-family: "Great Vibes";
+	font-weight:bold;
 	text-align:center;
 	font-size:80px;
 	font-weight:bold;
 }
 
 #start-spades-container {
-	width:300px;
+	width:343px;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -34,6 +36,43 @@ h1 {
 	margin-left:auto;
 	margin-right:auto;
 }
+
+.start-spades-row {
+	display:table-row;
+}
+
+.start-spades-cell {
+	display:table-cell;
+}
+
+.ready-to-play {
+	width:34px;
+	height:34px;
+	margin-left:5px;
+	padding-top:5px;
+	text-align:center;
+	background-color:white;
+	border-radius:2px;
+	box-shadow: 0 0 1px;
+	border: 2px solid gray;
+	cursor:pointer;
+}
+
+.david-button {
+	width: 566px;
+	height: 634px;
+	position: absolute;
+	margin-left:-103px;
+}
+
+.hide-until-ready {
+	display:none;
+}
+
+.highlight {
+	background-color:#66CC33;
+}
+
 ::-webkit-input-placeholder {
    text-align: center;
 }

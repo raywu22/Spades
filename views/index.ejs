@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap-theme.min.css"/>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="./libs/jquery-1.11.1.min.js"></script>
     <script src="./libs/jquery-ui.min.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./javascripts/indexScripts.js"></script>
   </head>
   <body>
 
-    <h1>SPADES</h1>
+    <h1 id="spades-header">SPADES</h1>
     <div id="start-spades-container">
 	  <form action="/startSpades" method="post">
 	    <div class="form-group">
-	      <input type="text" class="form-control start-spades-players" placeholder="Enter Player 1" name="player1">
-	      <input type="text" class="form-control start-spades-players" placeholder="Enter Player 2" name="player2">
-	      <input type="text" class="form-control start-spades-players" placeholder="Enter Player 3" name="player3">
-	      <input type="text" class="form-control start-spades-players" placeholder="Enter Player 4" name="player4">
+	      <div class="start-spades-row">
+	        <div class="start-spades-cell">
+		      <input type="text" class="form-control start-spades-players spades1" placeholder="Enter Player 1" name="player1">
+		    </div>
+		    <div class="start-spades-cell">
+		      <div id="select-player1" class="ready-to-play">&#10004</div>
+		    </div>
+	      </div>
+	      <div class="start-spades-row">
+	        <div class="start-spades-cell">
+		      <input type="text" class="form-control start-spades-players spades2" placeholder="Enter Player 2" name="player2">
+		    </div>
+		    <div class="start-spades-cell">
+		      <div id="select-player2" class="ready-to-play">&#10004</div>
+		    </div>
+	      </div>
+	      <div class="start-spades-row">
+	        <div class="start-spades-cell">
+		      <input type="text" class="form-control start-spades-players spades3" placeholder="Enter Player 3" name="player3">
+		    </div>
+		    <div class="start-spades-cell">
+		      <div id="select-player3" class="ready-to-play">&#10004</div>
+		    </div>
+	      </div>
+	      <div class="start-spades-row">
+	        <div class="start-spades-cell">
+		      <input type="text" class="form-control start-spades-players spades4" placeholder="Enter Player 4" name="player4">
+		    </div>
+		    <div class="start-spades-cell">
+		      <div id="select-player4" class="ready-to-play">&#10004</div>
+		    </div>
+	      </div>
 	    </div>
-	    <div class="start-spades-button">
-	    	<button type="submit" class="btn btn-default">Submit</button>
-	    </div>
+	    <button type="submit" class="hide-until-ready david-button"><img src="./images/david.jpg"></button>
 	  </form>
     </div>
-
   </body>
 </html>
