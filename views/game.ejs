@@ -1,14 +1,257 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap-theme.min.css"/>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <script src="./libs/jquery-1.11.1.min.js"></script>
     <script src="./libs/jquery-ui.min.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./javascripts/gameScripts.js"></script>
   </head>
-  <body>
-    <h1 id="spades-header">Welcome To The Game Page</h1>
+  <body id="game-body">
+    <h1 id="spades-header">SPADES</h1>
+    <div id="game-app">
+      <div id="spades-sideBar-container">
+        <h4>Ongoing Games</h4>
+        <%for (var playerIndex=0;playerIndex<playersInfo.length;playerIndex++){%>
+          <div class="spades-single-game-sideBar">
+            <label>Team 1</label>
+            <p class="team-names"><%=playersInfo[playerIndex].team1Players%></p>
+            <label>Team 2</label>
+            <p class="team-names"><%=playersInfo[playerIndex].team2Players%></p>
+          </div>
+        <%}%>
+      </div>
+      <div id="spades-main-container">
+        <%for (var playerIndex=0;playerIndex<playersInfo.length;playerIndex++){%>
+          <%var team1=playersInfo[playerIndex].team1Players%>
+          <%var team2=playersInfo[playerIndex].team2Players%>
+          <%var team1Points=playersInfo[playerIndex].team1Points%>
+          <%var team2Points=playersInfo[playerIndex].team2Points%>
+          <%var team1Letters=team1.split('-')[0][0].toUpperCase()+'-'+team1.split('-')[1][0].toUpperCase()%>
+          <%var team2Letters=team2.split('-')[0][0].toUpperCase()+'-'+team2.split('-')[1][0].toUpperCase()%>
+          <%var team1Player1=team1.split('-')[0]%>
+          <%var team1Player2=team1.split('-')[1]%>
+          <%var team2Player1=team2.split('-')[0]%>
+          <%var team2Player2=team2.split('-')[1]%>
+          <div class="spades-single-game game-hidden game<%=team1%><%=team2%>">
+            <div class="game-play-container">
+              <div class="game-instructions">
+                <h4>Valid Betting Inputs</h4>
+                <p class="player-label">Bet: 1-13</p>
+                <p class="player-label">Half-Nil: half</p>
+                <p class="player-label">Full-Nil: nil</p>
+                <p class="player-label">Blind-Nil: blind</p>
+              </div>
+              <div class="game-play">
+                <div class="game-delete-container">
+                  <form class="game-delete-form" action="game/deleteSpades" method="post">
+                    <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
+                    <button class="game-button" type="submit">Delete</button>
+                  </form>
+                </div>
+
+                <form class="game-input-score" action="game/scoreSpades" method="post">
+                  <div class="game-team1Player1 game-player">
+                    <p class="player-label"><%=team1Player1%></p>
+                    <img class="player-image" src="./images/spadesImage.jpg">
+                    <div class="game-bet-result">
+                      <label>Bet:</label>
+                      <select class="betting-input" name="team1Player1Bet">
+                        <option value="Invalid">Select</option>
+                        <option value="half">half</option>
+                        <option value="nil">nil</option>
+                        <option value="blind">blind</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>
+                      <label>Result:</label>
+                      <select class="betting-input" name="team1Player1Result">
+                        <option value="Invalid">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>                    
+                    </div>
+                  </div>
+                  <div class="game-team2Player1 game-player">
+                    <p class="player-label"><%=team2Player1%></p>
+                    <img class="player-image" src="./images/spadesImage.jpg">
+                    <div class="game-bet-result">
+                      <label>Bet:</label>
+                      <select class="betting-input" name="team2Player1Bet">
+                        <option value="Invalid">Select</option>
+                        <option value="half">half</option>
+                        <option value="nil">nil</option>
+                        <option value="blind">blind</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>
+                      <label>Result:</label>
+                      <select class="betting-input" name="team2Player1Result">
+                        <option value="Invalid">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>                    
+                    </div>
+                  </div>
+                  <div class="game-team2Player2 game-player">
+                    <p class="player-label"><%=team2Player2%></p>
+                    <img class="player-image" src="./images/spadesImage.jpg">
+                    <div class="game-bet-result">
+                      <label>Bet:</label>
+                      <select class="betting-input" name="team2Player2Bet">
+                        <option value="Invalid">Select</option>
+                        <option value="half">half</option>
+                        <option value="nil">nil</option>
+                        <option value="blind">blind</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>
+                      <label>Result:</label>
+                      <select class="betting-input" name="team2Player2Result">
+                        <option value="Invalid">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>                    
+                    </div>
+                  </div>
+                  <div class="game-team1Player2 game-player">
+                    <p class="player-label"><%=team1Player2%></p>
+                    <img class="player-image" src="./images/spadesImage.jpg">
+                    <div class="game-bet-result">
+                      <label>Bet:</label>
+                      <select class="betting-input" name="team1Player2Bet">
+                        <option value="Invalid">Select</option>
+                        <option value="half">half</option>
+                        <option value="nil">nil</option>
+                        <option value="blind">blind</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>
+                      <label>Result:</label>
+                      <select class="betting-input" name="team1Player2Result">
+                        <option value="Invalid">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                      </select>                    
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div class="game-score">
+              <h4>Current Game</h4>
+              <table class="score-table">
+                <tr>
+                  <th><%=team1Letters%></th>
+                  <th><%=team2Letters%></th>
+                </tr>
+                <%for (var scoreIndex=0;scoreIndex<team1Points.length;scoreIndex++){%>
+                  <tr>
+                    <td><%=team1Points[scoreIndex]%></td>
+                    <td><%=team2Points[scoreIndex]%></td>
+                  </tr>
+                <%}%>
+              </table>
+            </div>
+          </div>
+        <%}%>
+      </div>
+    </div>
   </body>
 </html>

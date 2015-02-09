@@ -13,6 +13,7 @@ $(document).ready(function(){
 		        audioElement.play();
 				$(".hide-until-ready").removeClass("hide-until-ready");
 				$(".start-spades-row").addClass("hide-until-ready");
+				$(".team-label").addClass("hide-until-ready");
 			}			
 		}
 	});

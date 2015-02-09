@@ -1,10 +1,7 @@
-body {
-  padding: 20px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+#game-body {
+	background-color:#FFEEFF;
+	padding: 20px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #spades-header {
@@ -35,6 +32,10 @@ a {
 	width:70px;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+.team-label {
+	font-size:20px;
 }
 
 .start-spades-row {
@@ -87,4 +88,159 @@ a {
 
 :-ms-input-placeholder {  
    text-align: center; 
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+/*game page*/
+
+#game-app {
+	width:900px;
+	height:654px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#spades-main-container {
+	width:900px;
+	height:654px;
+}
+
+#spades-sideBar-container {
+	width:190px;
+	height:654px;
+	background-color:#CCFFCC;
+	padding:10px;
+	float:left;
+}
+
+.spades-single-game-sideBar {
+	width:170px;
+	background-color:#FFFFCC;
+	padding:10px;
+	margin-bottom:5px;
+	cursor:pointer;
+}
+
+.spades-sideBar-selected {
+	background-color:#FFCC99;
+	box-shadow:0 0 2px;
+}
+
+.game-hidden {
+	display:none;
+}
+
+.spades-single-game {
+	float:left;
+	margin-left:5px;
+	height:654px;
+	width:705px;
+}
+
+.game-score {
+	width:140px;
+	background-color:#CCFFFF;
+	padding:10px;
+	height:654px;
+	float:left;
+}
+
+.score-table {
+	background-color:#CECEFF;
+	text-align:center;
+	padding:10px;
+	font-size:20px;
+	width:120px;
+}
+
+.score-table th {
+	text-align:center;
+	border:2px solid black;
+}
+
+.score-table td {
+	border:2px solid black;
+}
+
+.game-play-container {
+	float:left;
+	background-color:#CCFFFF;
+	width:565px;
+	height:654px;
+}
+
+.game-play {
+	width:555px;
+	height:644px;
+	margin-left:5px;
+	margin-top:5px;
+	background-color:#CECEFF;
+	padding-top:1px;
+}
+
+.game-player {
+	border:2px solid black;
+	width:180px;
+	height:200px;
+}
+
+.game-team1Player1 {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5px;
+}
+
+.game-team2Player1 {
+	margin-left:5px;
+	float:left;
+	margin-top:15px;
+}
+
+.game-team2Player2 {
+	margin-right:5px;
+	float:right;
+	margin-top:15px;
+}
+
+.game-team1Player2 {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:230px;
+}
+
+.player-image {
+	width:100px;
+	height:110px;
+	margin-left:38px;
+}
+
+.game-delete-container {
+	float:right;
+	margin-top:4px;
+	margin-right:4px;
+}
+
+.player-label {
+	text-align:center;
+	font-weight:bold;
+	font-size:15px;
+	margin-top:2px;
+}
+
+h4 {
+	font-weight:bold;
+}
+
+.game-instructions {
+	float:left;
+	margin-left:10px;
+}
+
+.betting-input {
+	width:100px;
+}
+
+.game-bet-result {
+	margin-top:5px;
+	margin-left:10px;
 }

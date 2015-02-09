@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models/player_models.js');
+var playersModel = models.playersModel;
+var doneModel = models.doneModel;
 
-/* GET home page. */
 router.get('/', function(req, res){
 	res.render('index');
 });
@@ -13,14 +15,18 @@ router.post('/startSpades',function(req,res){
 		player3:req.body.player3,
 		player4:req.body.player4,
 	}
-	var canPlay = true;
-	for (var playerIndex in players){
-		if (players[playerIndex].length===0){
-			canPlay = false;
-		}
-	}
-	if (canPlay){
-		res.render('game',{currentPlayers:players});
+	if (canPlay(players)){
+		var newPlayersModel = new playersModel({
+			team1Players:players.player1+"-"+players.player2,
+			team2Players:players.player3+"-"+players.player4,
+			team1Points:[0],
+			team2Points:[0]
+		});
+		newPlayersModel.save(function(error){
+			playersModel.find({},function(error,playersData){
+				res.redirect("game");
+			});
+		});
 	}
 	else{
 		res.redirect('/');
@@ -28,3 +34,15 @@ router.post('/startSpades',function(req,res){
 });
 
 module.exports = router;
+
+
+
+var canPlay = function(players){
+	var canWePlay = true;
+	for (var playerIndex in players){
+		if (players[playerIndex].length===0){
+			canWePlay = false;
+		}
+	}
+	return canWePlay;
+}

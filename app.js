@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://ds041581.mongolab.com:41581/heroku_app33726623');
+mongoose.connect('mongodb://heroku_app33726623:8nc1t6aqjnc4qumn9hrq0jpf86@ds041841.mongolab.com:41841/heroku_app33726623');
 var db = mongoose.connection;
 db.on('error',console.error.bind(console,'connection error:'));
 db.once('open',function(callback){
