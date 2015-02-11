@@ -36,8 +36,25 @@
           <%var team1Player2=team1.split('-')[1]%>
           <%var team2Player1=team2.split('-')[0]%>
           <%var team2Player2=team2.split('-')[1]%>
+
           <div class="spades-single-game game-hidden game<%=team1%><%=team2%>">
             <div class="game-play-container">
+
+              <div class="game-win1-container win-hidden">
+                <h1 class="win-header"><%=team1Player1%> and <%=team1Player2%> WIN</h3>
+                <form class="game-win-form" action="game/winGame" method="post">
+                  <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
+                  <button class="win-button" type="submit"><img src="./images/david.jpg"></button>
+                </form>
+              </div>
+              <div class="game-win2-container win-hidden" action="game/winGame" method="post">
+                <h1 class="win-header"><%=team2Player1%> and <%=team2Player2%> WIN</h3>
+                <form class="game-win-form" action="game/winGame" method="post">
+                  <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
+                  <button class="win-button" type="submit"><img src="./images/david.jpg"></button>
+                </form>
+              </div>
+
               <div class="game-instructions">
                 <h4>Valid Betting Inputs</h4>
                 <p class="player-label">Bet: 1-13</p>
@@ -49,7 +66,7 @@
                 <div class="game-delete-container">
                   <form class="game-delete-form" action="game/deleteSpades" method="post">
                     <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
-                    <button class="game-button" type="submit">Delete</button>
+                    <button class="game-button delete-button" type="submit">Delete</button>
                   </form>
                 </div>
 
@@ -230,8 +247,11 @@
                       </select>                    
                     </div>
                   </div>
+                  <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
+                  <div class="game-button-container">
+                    <button class="game-button" type="submit">Score!</button>
+                  </div>
                 </form>
-
               </div>
             </div>
             <div class="game-score">

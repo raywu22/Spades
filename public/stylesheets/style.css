@@ -244,3 +244,38 @@ h4 {
 	margin-top:5px;
 	margin-left:10px;
 }
+
+.game-button-container {
+	margin-left:248px;
+	margin-top:-328px;
+}
+
+
+.game-win1-container {
+	display:none;
+	position:absolute;
+	text-align:center;
+	margin-top:10px;
+	width:560px;
+	z-index:13;
+}
+
+.game-win2-container {
+	display:none;
+	position:absolute;
+	text-align:center;
+	margin-top:10px;
+	width:560px;
+	z-index:13;
+}
+
+.win-button img {
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+	height:500px;
+}
+
+.win-header {
+	font-size:50px;
+}
