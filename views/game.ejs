@@ -268,6 +268,10 @@
                   </tr>
                 <%}%>
               </table>
+              <form class="undo-score" action="game/undoScoreSpades" method="post">
+                <input type="hidden" name="gameId" value="<%=playersInfo[playerIndex].id%>">
+                <button class"undo-button" type="submit">Undo</button>
+              </form>
             </div>
           </div>
         <%}%>

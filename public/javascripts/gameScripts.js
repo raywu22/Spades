@@ -41,5 +41,17 @@ $(document).ready(function(){
             }
         });
     });
-
+    $(".undo-score").on("submit",function(f){
+        f.preventDefault();
+        $.ajax({
+            url: $(this).attr("action"),
+            type: 'POST',
+            data: $(this).serialize(),
+            beforeSend: function() {
+            },
+            success: function(message) {
+                window.location = "/game";
+            }
+        });
+    });
 });

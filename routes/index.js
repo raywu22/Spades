@@ -15,6 +15,7 @@ router.post('/startSpades',function(req,res){
 		player3:req.body.player3,
 		player4:req.body.player4,
 	}
+
 	if (canPlay(players)){
 		var newPlayersModel = new playersModel({
 			team1Players:players.player1+"-"+players.player2,
@@ -39,9 +40,16 @@ module.exports = router;
 
 var canPlay = function(players){
 	var canWePlay = true;
+
 	for (var playerIndex in players){
-		if (players[playerIndex].length===0){
+		var currentPlayer = players[playerIndex]
+		if (currentPlayer.length===0){
 			canWePlay = false;
+		}
+		for (var i=0; i<currentPlayer.length;i++){
+			if (currentPlayer[i]===' '){
+				canWePlay = false;
+			}
 		}
 	}
 	return canWePlay;

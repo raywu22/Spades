@@ -8,13 +8,13 @@ $(document).ready(function(){
 			highlightArray = $(".highlight");
 			if (highlightArray.length===4){
 				var audioElement = document.createElement('audio');
-		        audioElement.setAttribute('src', './Spades.mp3');
+		        audioElement.setAttribute('src','./Spades.mp3');
 		        audioElement.setAttribute('autoplay', 'autoplay');
 		        audioElement.play();
 				$(".hide-until-ready").removeClass("hide-until-ready");
 				$(".start-spades-row").addClass("hide-until-ready");
 				$(".team-label").addClass("hide-until-ready");
-			}			
+			}
 		}
 	});
 });

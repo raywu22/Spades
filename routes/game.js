@@ -80,6 +80,27 @@ router.post('/scoreSpades',function(req,res){
 	}
 });
 
+router.post('/undoScoreSpades',function(req,res){
+	var gameId = req.body.gameId;
+	playersModel.findById(gameId,function(error,playersData){
+		console.log(playersData);
+		var isEmpty = playersData.team1Points.length===1;
+		if (!isEmpty){
+			newTeam1Points = playersData.team1Points.splice(0,playersData.team1Points.length-1);
+			newTeam2Points = playersData.team2Points.splice(0,playersData.team2Points.length-1);
+			playersModel.findByIdAndUpdate(gameId,{$set:{
+															team1Points:newTeam1Points,
+															team2Points:newTeam2Points
+														}},function(error,updatedPlayersData){
+				res.send({message:"undoed",data:updatedPlayersData});
+			});
+		}
+		else {
+			res.send("invalidInputs");
+		}
+	});
+});
+
 module.exports = router;
 
 var hasValidValues = function(playerObject){
