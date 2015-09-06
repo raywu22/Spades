@@ -2,9 +2,11 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
+    <link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap-theme.min.css"/>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
     <script src="./libs/jquery-1.11.1.min.js"></script>
     <script src="./libs/jquery-ui.min.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
@@ -12,43 +14,27 @@
   </head>
   <body>
 
-    <h1 id="spades-header">SPADES</h1>
+    <h1 id="spades-header">Spades</h1>
     <div id="start-spades-container">
 	  <form action="/startSpades" method="post">
 	    <div class="form-group">
 	   	  <label class="team-label">Team 1</label>
 	      <div class="start-spades-row">
-	        <div class="start-spades-cell">
-		      <input type="text" class="form-control start-spades-players spades1" placeholder="Enter Player 1" name="player1">
-		    </div>
-		    <div class="start-spades-cell">
-		      <div id="select-player1" class="ready-to-play">&#10004</div>
-		    </div>
+		    <input type="text" class="form-control start-spades-players spades1" placeholder="Enter Player 1" name="player1">
+		    <div id="select-player1" class="ready-to-play">&#10004</div>
 	      </div>
 	      <div class="start-spades-row">
-	        <div class="start-spades-cell">
-		      <input type="text" class="form-control start-spades-players spades2" placeholder="Enter Player 2" name="player2">
-		    </div>
-		    <div class="start-spades-cell">
-		      <div id="select-player2" class="ready-to-play">&#10004</div>
-		    </div>
+		    <input type="text" class="form-control start-spades-players spades2" placeholder="Enter Player 2" name="player2">
+		    <div id="select-player2" class="ready-to-play">&#10004</div>
 	      </div>
 	      <label class="team-label">Team 2</label>
 	      <div class="start-spades-row">
-	        <div class="start-spades-cell">
-		      <input type="text" class="form-control start-spades-players spades3" placeholder="Enter Player 3" name="player3">
-		    </div>
-		    <div class="start-spades-cell">
-		      <div id="select-player3" class="ready-to-play">&#10004</div>
-		    </div>
+		    <input type="text" class="form-control start-spades-players spades3" placeholder="Enter Player 3" name="player3">
+		    <div id="select-player3" class="ready-to-play">&#10004</div>
 	      </div>
 	      <div class="start-spades-row">
-	        <div class="start-spades-cell">
-		      <input type="text" class="form-control start-spades-players spades4" placeholder="Enter Player 4" name="player4">
-		    </div>
-		    <div class="start-spades-cell">
-		      <div id="select-player4" class="ready-to-play">&#10004</div>
-		    </div>
+		    <input type="text" class="form-control start-spades-players spades4" placeholder="Enter Player 4" name="player4">
+		    <div id="select-player4" class="ready-to-play">&#10004</div>
 	      </div>
 	    </div>
 	    <button type="submit" class="hide-until-ready david-button"><img src="./images/david.jpg"></button>
