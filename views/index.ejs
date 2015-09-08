@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
-    <link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./libs/bootstrap/css/bootstrap-theme.min.css"/>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
-    <link rel='stylesheet' href='/stylesheets/index.css'/>
-    <script src="./libs/jquery-1.11.1.min.js"></script>
-    <script src="./libs/jquery-ui.min.js"></script>
-    <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./javascripts/indexScripts.js"></script>
-  </head>
-  <body>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
+	<link href='https://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./libs/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="./libs/bootstrap/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='/stylesheets/style.css'/>
+	<link rel='stylesheet' href='/stylesheets/index.css'/>
+	<script src="./libs/jquery-1.11.1.min.js"></script>
+	<script src="./libs/jquery-ui.min.js"></script>
+	<script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./javascripts/indexScripts.js"></script>
+</head>
+<body>
 
-    <h1 id="spades-header">Spades</h1>
-    <div id="start-spades-container">
-	  <form action="/startSpades" method="post">
-	    <div class="form-group">
-	   	  <label class="team-label">Team 1</label>
-	      <div class="start-spades-row">
-		    <input type="text" class="form-control start-spades-players spades1" placeholder="Enter Player 1" name="player1">
-		    <div id="select-player1" class="ready-to-play">&#10004</div>
-	      </div>
-	      <div class="start-spades-row">
-		    <input type="text" class="form-control start-spades-players spades2" placeholder="Enter Player 2" name="player2">
-		    <div id="select-player2" class="ready-to-play">&#10004</div>
-	      </div>
-	      <label class="team-label">Team 2</label>
-	      <div class="start-spades-row">
-		    <input type="text" class="form-control start-spades-players spades3" placeholder="Enter Player 3" name="player3">
-		    <div id="select-player3" class="ready-to-play">&#10004</div>
-	      </div>
-	      <div class="start-spades-row">
-		    <input type="text" class="form-control start-spades-players spades4" placeholder="Enter Player 4" name="player4">
-		    <div id="select-player4" class="ready-to-play">&#10004</div>
-	      </div>
-	    </div>
-	    <button type="submit" class="hide-until-ready david-button"><img src="./images/david.jpg"></button>
-	  </form>
-    </div>
-  </body>
+	<h1 id="spades-header">Play Spades</h1>
+	<div id="start-spades-container">
+		<form action="/startSpades" method="post">
+			<div class="form-group start-spades-form">
+				<div class="start-spades-team team1">	
+					<label class="team-label">Team 1 <i class="fa fa-users" style="font-size: 14px;"></i></label>
+					<div class="start-spades-row">
+						<i class="fa fa-user user-icon"></i>
+						<input type="text" class="form-control start-spades-players spades1" placeholder="Player 1" name="player1">
+						<!-- <div id="select-player1" class="ready-to-play"><i class="fa fa-check"></i></div> -->
+					</div>
+					<div class="start-spades-row">
+						<i class="fa fa-user user-icon"></i>
+						<input type="text" class="form-control start-spades-players spades2" placeholder="Player 2" name="player2">
+						<!-- <div id="select-player2" class="ready-to-play"><i class="fa fa-check"></i></div> -->
+					</div>
+				</div>
+				<div class="start-spades-team team2">
+					<label class="team-label">Team 2 <i class="fa fa-users" style="font-size: 14px;"></i></label>
+					<div class="start-spades-row">
+						<i class="fa fa-user user-icon"></i>
+						<input type="text" class="form-control start-spades-players spades3" placeholder="Player 3" name="player3">
+						<!-- <div id="select-player3" class="ready-to-play"><i class="fa fa-check"></i></div> -->
+					</div>
+					<div class="start-spades-row">
+						<i class="fa fa-user user-icon"></i>
+						<input type="text" class="form-control start-spades-players spades4" placeholder="Player 4" name="player4">
+						<!-- <div id="select-player4" class="ready-to-play"><i class="fa fa-check"></i></div> -->
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default">Start</button>
+		</form>
+	</div>
+</body>
 </html>
